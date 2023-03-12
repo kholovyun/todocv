@@ -7,10 +7,12 @@ import { deleteToDoList, selectToDoList } from '../../store/todo.slice';
 import UpdateModalForm from '../UpdateModalForm/UpdateModalForm';
 import ITodoList from '../../interfaces/ITodoList';
 import './ToDoList.css'
+import ModalWin from '../UI/ModalWin';
 
 const ToDoList:FunctionComponent<ITodoListProps>= (props): React.ReactElement => {
 
   const [showUpdateModal, setShowUpdateModal] = useState<boolean>(false)
+  const [showDeleteModal, setShowDeleteModal] = useState<boolean>(false)
 
   const update = (item: ITodoList) => {
       dispatch(selectToDoList(item))
@@ -28,7 +30,16 @@ const ToDoList:FunctionComponent<ITodoListProps>= (props): React.ReactElement =>
             props.todos?.map((item, i) => {
             const id = uuidv4()
             return(
-                <div key={id} className="todo_list">
+              showDeleteModal? 
+                  <ModalWin
+                      key={id}
+                      message={`Delete selected "${item.title}" list?`}
+                      submitText={'Delete'}
+                      submitFunc={() => dispatch(deleteToDoList(i))}
+                      cancelFunc={() => setShowDeleteModal(false)}  
+                  />
+                  :
+                  <div key={id} className="todo_list">
                     <div className='modal_controls'>
                         <button 
                             onClick={() => update(item)}>
@@ -36,7 +47,7 @@ const ToDoList:FunctionComponent<ITodoListProps>= (props): React.ReactElement =>
                         </button>
                         <button 
                             className='def_btn' 
-                            onClick={() => dispatch(deleteToDoList(i))}>
+                            onClick={() => setShowDeleteModal(true)}>
                               <i className="fa-solid fa-trash"></i>
                         </button>   
                     </div>
@@ -44,7 +55,7 @@ const ToDoList:FunctionComponent<ITodoListProps>= (props): React.ReactElement =>
                     <TaskList
                       tasks={item.todos}
                     /> 
-                </div>
+                </div>   
             )
         })   
       }
@@ -55,7 +66,7 @@ const ToDoList:FunctionComponent<ITodoListProps>= (props): React.ReactElement =>
           />
         :
         null 
-    }
+      }
     </div>
   )
 }

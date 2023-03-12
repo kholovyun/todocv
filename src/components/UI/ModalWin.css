@@ -1,0 +1,33 @@
+.def_modal_win{
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-height: 200px;
+    min-width: 500px;
+    border-radius: 15px;
+    padding: 20px;
+}
+.def_modal_win > h4 {
+    font-size: 20px;
+    text-align: center;
+}
+.modal_btns{
+    max-width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 20%;
+}
+.modal_btns > button {
+    height: 40px;
+    border: none;
+    color: white;
+}
+.submit_btn{
+    background-color: green;
+}
+.cancel_btn {
+    background-color: red;
+}
