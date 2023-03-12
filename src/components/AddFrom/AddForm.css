@@ -1,0 +1,75 @@
+.preview {
+    background: rgb(34,69,195);
+    background: linear-gradient(0deg, rgba(34,69,195,1) 0%, rgba(224,135,166,1) 80%);
+    padding: 20px;
+    min-height: 200px;
+    border-radius: 15px;
+}
+.add_form_container {
+    background: rgb(131,58,180);
+    min-height: 86.5vh;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    padding: 50px;
+}
+.form_block {
+    padding: 20px;
+    padding-bottom: 0;
+    
+}
+.form_block > input {
+    background-color: bisque;
+    border: 0.5px solid white;
+    border-radius: 7px;
+    background-color: rgb(184, 183, 182);
+    color:  rgb(6, 55, 11);
+    padding: 15px;
+    font-size: 14px;
+}
+.add_title{
+    margin: 20px;
+    color: rgb(0, 0, 0);
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+.create_btn{
+        width: 200px;
+        height: 60px;
+        margin: 0 auto;
+        display: block;
+        border-radius: 20px;
+        color: white;
+        font-size: 18px;
+        font-weight: 500;
+        background: rgb(2,0,36);
+        background: 
+        linear-gradient(270deg, 
+                                rgba(2,0,36,1) 0%, 
+                                rgba(54,221,199,0.8268557422969187) 0%, 
+                                rgba(15,161,61,1) 100%);
+        transition: all 0.2s ease-in-out;
+}
+.add_task_btn {
+    background-color: greenyellow;
+    border-radius: 50%;
+    border: none;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+}
+.add_title{
+    display: flex;
+    font-size: 18px;
+    font-weight: 500;
+}
+.tasks_preview{
+    max-width: 400px;
+    border-bottom: 1px solid black;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.back_to_main {
+    margin-bottom: 20px;
+}

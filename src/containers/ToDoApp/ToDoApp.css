@@ -1,0 +1,52 @@
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.todo_list{
+    min-width: 250px;
+    height: auto;
+    border: 2px solid black;
+    border-radius: 13px;
+    margin: 20px;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: rgba(82, 250, 82, 0.542);
+}
+.title{
+    display: flex;
+    flex-wrap: wrap;
+}
+.todos_block{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    justify-content: space-around;
+}
+.todo_list_item {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    background-color: transparent;
+}
+.add_btn{
+    width: 200px;
+    height: 60px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    background: rgb(2,0,36);
+    background: 
+    linear-gradient(270deg, 
+                            rgba(2,0,36,1) 0%, 
+                            rgba(54,221,199,0.8268557422969187) 0%, 
+                            rgba(15,161,61,1) 100%);
+    transition: all 0.2s ease-in-out;
+}
+.add_btn:hover{
+    background-color: green;
+}

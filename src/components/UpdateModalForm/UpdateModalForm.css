@@ -1,0 +1,59 @@
+.modal_win_bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.351);
+}
+.modal_win{
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-height: 300px;
+    min-width: 600px;
+    border-radius: 15px;
+    padding: 20px;
+}
+.update_completed,
+.update_uncompleted {
+    min-height: 50px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 17px;
+    border-radius: 5px;
+}
+.update_completed{
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(45,253,83,1) 100%);
+}
+.update_uncompleted{
+    background: rgb(195,153,34);
+    background: linear-gradient(0deg, rgba(195,153,34,1) 0%, rgba(253,45,118,1) 100%);   
+}
+.change_status_btn{
+    background-color: transparent;
+    min-width: 100px;
+    max-height: 40px;
+}
+.change_status_btn:hover {
+    background-color: white;
+}
+.modal_controls{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.def_btn{
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    color: red;
+    transition: all 0.3s ease-in-out;
+}
+.def_btn:hover {
+    scale: 1.5;
+}
