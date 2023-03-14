@@ -23,11 +23,15 @@ const ToDoList:FunctionComponent<ITodoListProps>= (props): React.ReactElement =>
       setShowUpdateModal(false)
   }
 
+  const removeList = (id: string) => {
+      dispatch(deleteToDoList(id))
+      setShowDeleteModal(false)
+  }
   const dispatch = useDispatch()
   return (
     <div className='todo_container'>
         {
-            props.todos?.map((item, i) => {
+            props.todos?.map((item) => {
             const id = uuidv4()
             return(
               showDeleteModal? 
@@ -35,7 +39,7 @@ const ToDoList:FunctionComponent<ITodoListProps>= (props): React.ReactElement =>
                       key={id}
                       message={`Delete selected "${item.title}" list?`}
                       submitText={'Delete'}
-                      submitFunc={() => dispatch(deleteToDoList(i))}
+                      submitFunc={() => removeList(item.id)}
                       cancelFunc={() => setShowDeleteModal(false)}  
                   />
                   :

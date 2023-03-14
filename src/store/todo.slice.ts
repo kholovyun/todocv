@@ -25,7 +25,10 @@ export const  todoSlice = createSlice({
             localStorage.setItem('todos', JSON.stringify(state.todos))
         },
         deleteToDoList : (state, action): void => {
-            state.todos!.splice(action.payload, 1)
+            const index = state.todos!.findIndex(todo => todo.id === action.payload)
+            const newArr = [...state.todos!]
+            newArr.splice(index, 1)
+            state.todos = newArr
             localStorage.setItem('todos', JSON.stringify(state.todos))
         },
         selectToDoList : (state, action): void => {
