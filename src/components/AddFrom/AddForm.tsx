@@ -4,6 +4,7 @@ import ITodoList from '../../interfaces/ITodoList'
 import { addToDoList, getData } from '../../store/todo.slice';
 import {useNavigate} from 'react-router-dom'
 import TaskList from '../ToDoLIst/TaskList/TaskList';
+import { v4 as uuidv4 } from 'uuid';
 import './AddForm.css'
 
 
@@ -27,7 +28,7 @@ const AddForm:FunctionComponent = (): React.ReactElement => {
     }
     const AddTask = (e: FormEvent) => {
         e.preventDefault()
-        const copy = {...newTodoList}
+        let copy = {...newTodoList}
         if(newTask === ''){
             setIsWrongInput(true)
             return
@@ -37,6 +38,7 @@ const AddForm:FunctionComponent = (): React.ReactElement => {
             completed: 0
         }
         copy.todos.push(addTask)
+        copy = {...copy, id: uuidv4() }
         setNewTodoList(copy)
         setNewTask('')
     }
